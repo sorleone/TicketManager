@@ -8,12 +8,12 @@ import org.junit.Test;
 
 
 public class TestModel {
-	
-	
-	@Test@Ignore
-	public void test() {
-		fail("Not yet implemented");
+    
+	@Test
+	public void nextTicketTest() {
+	    Model ticketManager = new TicketManager();
+	    assertEquals(0, ticketManager.lastGivenTicket());
+	    ticketManager.nextTicket();
+	    assertEquals(1, ticketManager.lastGivenTicket());
 	}
-	
-
 }

@@ -6,7 +6,6 @@ public class CustomerStrategy implements RoleStrategy {
 
     @Override
     public void incTicketNumber(Model m) {
-        // TODO Auto-generated method stub
         
     }
 
