@@ -6,13 +6,11 @@ public class OfficeWorkerStrategy implements RoleStrategy {
 
     @Override
     public void incTicketNumber(Model m) {
-        // TODO Auto-generated method stub
-        
+        m.serveNext();
     }
 
     @Override
     public int getTicketNumber(Model m) {
-        // TODO Auto-generated method stub
-        return 0;
+        return m.ticketToServe();
     }
 }
