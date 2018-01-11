@@ -7,12 +7,12 @@ public class TicketManager extends Model {
     
     @Override
     public int ticketToServe() {
-return 0;
+        return 0;
     }
 
     @Override
     public int lastGivenTicket() {
-        return 0;
+        return this.lastGivenTicket;
     }
 
     @Override
@@ -22,6 +22,6 @@ return 0;
 
     @Override
     public void nextTicket() {
- 
+        this.lastGivenTicket++;
     }
 }
