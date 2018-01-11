@@ -20,7 +20,9 @@ public class DisplayUI extends JPanel implements TicketManagerView {
 
 	@Override
 	public void update(Observable o, Object arg) {
-
+        if(o instanceof Model) {
+            label.setText("currently served: " + ((Model)o).ticketToServe());
+        }
 	}
 
 	@Override
