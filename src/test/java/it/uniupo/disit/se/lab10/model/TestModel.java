@@ -23,4 +23,15 @@ public class TestModel {
 	    ticketManager.nextTicket();
 	    assertEquals(1, ticketManager.lastGivenTicket());
 	}
+	
+   @Test
+    public void serveNextTest() {
+        assertEquals(0, ticketManager.lastGivenTicket());
+        assertEquals(0, ticketManager.ticketToServe());
+        ticketManager.serveNext();
+        assertEquals(0, ticketManager.ticketToServe());
+        ticketManager.nextTicket();
+        ticketManager.serveNext();
+        assertEquals(1, ticketManager.ticketToServe());
+    }
 }
