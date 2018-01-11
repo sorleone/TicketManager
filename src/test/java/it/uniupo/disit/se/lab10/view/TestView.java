@@ -12,19 +12,33 @@ import it.uniupo.disit.se.lab10.model.TicketManager;
 public class TestView {
 
     private Model ticketManager;
+    private RoleStrategy customerRole;
     
     @Before
     public void setUp() {
-        ticketManager = new TicketManager();
+        this.ticketManager = new TicketManager();
+        this.customerRole = new CustomerStrategy();
     }
     
 	@Test
 	public void customerStrategyTest() {
-        RoleStrategy customerRole = new CustomerStrategy();
         assertEquals(0, customerRole.getTicketNumber(ticketManager));
         customerRole.incTicketNumber(ticketManager);
         assertEquals(1, customerRole.getTicketNumber(ticketManager));
 	}
+	
+   @Test
+   public void officeWorkerStrategyTest() {
+       RoleStrategy officeWorkerRole = new OfficeWorkerStrategy();
+       assertEquals(0, officeWorkerRole.getTicketNumber(ticketManager));
+       officeWorkerRole.incTicketNumber(ticketManager);
+       assertEquals(0, officeWorkerRole.getTicketNumber(ticketManager));
+       assertEquals(0, customerRole.getTicketNumber(ticketManager));
+       customerRole.incTicketNumber(ticketManager);
+       assertEquals(0, officeWorkerRole.getTicketNumber(ticketManager));
+       officeWorkerRole.incTicketNumber(ticketManager);
+       assertEquals(1, officeWorkerRole.getTicketNumber(ticketManager));
+   }
 }
 
 
