@@ -66,10 +66,17 @@ public class TestView {
        officeWorkerRole.incTicketNumber(ticketManager);
        assertEquals("ticket: 1", serverUI1.label.getText());
    }
-   /*
+   
    @Test
    public void displayUITest() {
-       DisplayUI display = GuiActionRunner.execute(() -> new DisplayUI());
+       DisplayUI display = new DisplayUI();
+       ticketManager.addObserver(display);
        assertEquals(null, display.getRole());
-   }*/
+       assertEquals("currently served: none", display.label.getText());
+       officeWorkerRole.incTicketNumber(ticketManager);
+       assertEquals("currently served: 0", display.label.getText());
+       customerRole.incTicketNumber(ticketManager);
+       officeWorkerRole.incTicketNumber(ticketManager);
+       assertEquals("currently served: 1", display.label.getText());
+   }
 }

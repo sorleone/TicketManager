@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import it.uniupo.disit.se.lab10.controller.AbstractController;
+import it.uniupo.disit.se.lab10.model.Model;
 
 public class DisplayUI extends JPanel implements TicketManagerView {
 	
@@ -19,15 +20,11 @@ public class DisplayUI extends JPanel implements TicketManagerView {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public void addListener(AbstractController listener) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void addListener(AbstractController listener) {}
 
 	@Override
 	public RoleStrategy getRole() {
