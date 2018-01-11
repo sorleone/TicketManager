@@ -7,7 +7,7 @@ public class TicketManager extends Model {
     
     @Override
     public int ticketToServe() {
-        return 0;
+        return this.ticketToServe;
     }
 
     @Override
@@ -17,7 +17,9 @@ public class TicketManager extends Model {
 
     @Override
     public void serveNext() {
-
+        if(ticketToServe < lastGivenTicket) {
+            ticketToServe++;
+        }
     }
 
     @Override
