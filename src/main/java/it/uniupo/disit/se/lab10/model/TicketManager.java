@@ -20,10 +20,14 @@ public class TicketManager extends Model {
         if(ticketToServe < lastGivenTicket) {
             ticketToServe++;
         }
+        setChanged();
+        notifyObservers();
     }
 
     @Override
     public void nextTicket() {
         this.lastGivenTicket++;
+        setChanged();
+        notifyObservers();
     }
 }

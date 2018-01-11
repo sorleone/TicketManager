@@ -31,8 +31,6 @@ public class DisplayUI extends JPanel implements TicketManagerView {
 
 	@Override
 	public RoleStrategy getRole() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
